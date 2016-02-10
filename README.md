@@ -96,3 +96,7 @@ Enter them in the `boot>` prompt when booting the installer. Put them in `/etc/b
 ### Firmware update
 
 The driver used for wireless networking is [athn(4)](http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man4/athn.4?query=athn). It might not work properly out of the box. Once OpenBSD is installed, run `fw_update` with no arguments. It will figure out which firmware updates are required and will download and install them. When it finishes, `reboot`.
+
+## Credits
+
+These instructions were collected from websites, mailing lists, forums, and whatever I could find.
