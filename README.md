@@ -16,7 +16,7 @@ This is a writeup on getting OpenBSD running on PC Engines APU-2.
 | Antenna reverse SMA dual band | PC Engines | [antsmadb](http://www.pcengines.ch/antsmadb.htm) | 2 x $2.05
 | Null modem cable DB9-F to DB9-F | PC Engines, anywhere | [db9cab1](http://www.pcengines.ch/db9cab1.htm) | $1.3
 | USB to RS-232 DM9-M adapter | Sabrent (FTDI) | [USB-2920](https://www.sabrent.com/category/cables/USB-2920/) | $10.11 |
-| SanDisk Cruzer Blade CZ50 8GB USB 2.0 Flash Drive | Amazon, anywhere | [CZ50](http://www.amazon.com/SanDisk-Cruzer-Frustration-Free-Packaging--SDCZ50-008G-AFFP/dp/B007KFAG7U/) | $4.29
+| 8GB USB Flash Drive | Amazon, anywhere | [CZ50](http://www.amazon.com/SanDisk-Cruzer-Frustration-Free-Packaging--SDCZ50-008G-AFFP/dp/B007KFAG7U/) | $4.29
 
 Total $208.68 without shipping.
 
