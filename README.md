@@ -1,6 +1,6 @@
-# OpenBSD on PC Engines APU-2
+# OpenBSD on PC Engines APU2
 
-This is a writeup on getting OpenBSD running on PC Engines APU-2.
+This is a writeup on getting OpenBSD running on PC Engines APU2.
 
 ## Hardware
 
@@ -28,15 +28,15 @@ Assemble the hardware per the instructions on the PC Engines website. Remember:
 
 ## Setup serial console
 
-Note that the serial port settings for the APU-2 are 115200 baud rate, 8N1 (8 data bits, no parity, 1 stop bit).
+Note that the serial port settings for the APU2 are 115200 baud rate, 8N1 (8 data bits, no parity, 1 stop bit).
 
 1. Install the USB to serial [driver](http://downloads.trendnet.com/tu-s9_v2/utilities/driver_tu-s9_20151110.zip)
 2. Plug the USB end of the USB to serial cable to the Mac
 3. Plug the DB9-M end of the USB to serial cable to one end of the null modem cable
-4. Plug the other end of the null modem cable to the APU-2
-5. Connect to the APU-2 from the terminal: `screen /dev/tty.usbserial 115200` (note: your device might be different, look for devices with `tty` and `serial` in their name)
+4. Plug the other end of the null modem cable to the APU2
+5. Connect to the APU2 from the terminal: `screen /dev/tty.usbserial 115200` (note: your device might be different, look for devices with `tty` and `serial` in their name)
 
-Power the APU-2 off and back on by pulling the plug and plugging it back in, respectively. You should see output on the screen.
+Power the APU2 off and back on by pulling the plug and plugging it back in, respectively. You should see output on the screen.
 
 ## Bootable TinyCore Linux USB flash drive
 
@@ -55,13 +55,13 @@ BIOS updates require flashing the ROM. Create a bootable USB flash drive with Ti
 
 If the BIOS needs updating - the version displayed during boot is not the latest that's on the PC Engines website - follow these steps:
 
-1. Power off the APU-2
-2. Insert the USB flash drive to one of the APU-2's USB slots
+1. Power off the APU2
+2. Insert the USB flash drive to one of the APU2's USB slots
 3. Connect the serial console cable
-4. Power on the APU-2
-5. Press F10 to enter the APU-2 boot menu. In the boot menu, opt to boot from the USB flash drive (usually option number 1)
+4. Power on the APU2
+5. Press F10 to enter the APU2 boot menu. In the boot menu, opt to boot from the USB flash drive (usually option number 1)
 6. Once you get to a prompt, use `flashrom` to update the BIOS. The ROM file will be in `/media/SYSLINUX`: `flashrom -p internal -w /media/SYSLINUX/apu2_160120.rom`
-7. When verification is done, reboot the APU-2 so changes take effect
+7. When verification is done, reboot the APU2 so changes take effect
 
 ## Install OpenBSD
 
@@ -86,9 +86,9 @@ Enter them in the `boot>` prompt when booting the installer. Put them in `/etc/b
 
 ### Install OpenBSD
 
-1. Power off the APU-2
-2. Insert the bootable OpenBSD installer USB flash drive to one of the USB slots on the APU-2
-3. Power on the APU-2, press F10 to get to the boot menu, and choose to boot from USB (usually option number 1)
+1. Power off the APU2
+2. Insert the bootable OpenBSD installer USB flash drive to one of the USB slots on the APU2
+3. Power on the APU2, press F10 to get to the boot menu, and choose to boot from USB (usually option number 1)
 4. At the `boot>` prompt, remember the serial console settings (see above)
 5. Also at the `boot>` prompt, press Enter to start the installer
 6. Follow the installation instructions
