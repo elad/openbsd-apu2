@@ -6,7 +6,7 @@ This is a writeup on getting OpenBSD running on PC Engines APU2.
 
 | Component  | Source | Link  | Price  |
 |---|---|---|---|
-| APU.2C4 system board (GX-412TC quad core / 4GB / 3 Intel GigE / 2 miniPCI express / mSATA / USB / RTC battery) | PC Engines | [apu2c4](http://www.pcengines.ch/apu2c4.htm) | $128
+| APU.2C4 system board (GX-412TC quad core / 4GB / 3 Intel GigE / 2 miniPCI express / mSATA / USB / RTC battery) | PC Engines | [apu2c4](http://www.pcengines.ch/apu2c4.htm) | $122
 | Enclosure (3 LAN, black, USB) | PC Engines | [case1d2blku](http://www.pcengines.ch/case1d2blku.htm) | $10
 | AC adapter 12V 2A euro plug | PC Engines | [ac12veur2 ](http://www.pcengines.ch/ac12veur2.htm) | $4.4
 | SSD M-Sata 16GB MLC, Phison S9 controller | PC Engines | [msata16d](http://www.pcengines.ch/msata16d.htm) | $17
@@ -18,7 +18,7 @@ This is a writeup on getting OpenBSD running on PC Engines APU2.
 | USB to RS-232 DM9-M adapter | Sabrent (FTDI) | [USB-2920](https://www.sabrent.com/category/cables/USB-2920/) | $10.11 |
 | 8GB USB Flash Drive | Amazon, anywhere | [CZ50](http://www.amazon.com/SanDisk-Cruzer-Frustration-Free-Packaging--SDCZ50-008G-AFFP/dp/B007KFAG7U/) | $4.29
 
-Total $208.68 without shipping.
+Total $202.68 without shipping.
 
 Assemble the hardware per the instructions on the PC Engines website. Remember:
 
