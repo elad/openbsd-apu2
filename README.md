@@ -43,9 +43,9 @@ Power the APU2 off and back on by pulling the plug and plugging it back in, resp
 BIOS updates require flashing the ROM. Create a bootable USB flash drive with TinyCore Linux from PC Engines. It includes `flashrom` but doesn't include any ROM images you might need. Steps:
 
 1. Download TinyCore Linux ([apu2-tinycore6.4.img.gz](http://pcengines.ch/file/apu2-tinycore6.4.img.gz)) and extract it to get **apu2-tinycore6.4.img**
-2. Download the latest ROM ([apu2_160120.zip](http://www.pcengines.ch/file/apu2_160120.zip)) and extract it to get **apu2_160120.rom**. It is required for making wireless networking work and booting from an SD card
+2. Download the latest ROM ([apu2_160311.zip](http://www.pcengines.ch/file/apu2_160311.zip)) and extract it to get **apu2_160311.rom**. It is required for making wireless networking work and booting from an SD card
 3. Double click **apu2-tinycore6.4.img**
- to mount the image and drag **apu2_160120.rom** to it
+ to mount the image and drag **apu2_160311.rom** to it
 4. Eject the TinyCore Linux image (usually named **SYSLINUX**)
 5. Insert the USB flash drive to the Mac, figure out which device it is (with `diskutil list`, let's assume it's `/dev/disk2`) and unmount it (`diskutil unmountDisk /dev/disk2`)
 6. Write the TinyCore Linux image to the flash drive: `sudo dd if=apu2-tinycore6.4.img of=/dev/rdisk2 bs=1m` (note the use of `rdisk2` - that's the raw device)
@@ -60,7 +60,7 @@ If the BIOS needs updating - the version displayed during boot is not the latest
 3. Connect the serial console cable
 4. Power on the APU2
 5. Press F10 to enter the APU2 boot menu. In the boot menu, opt to boot from the USB flash drive (usually option number 1)
-6. Once you get to a prompt, use `flashrom` to update the BIOS. The ROM file will be in `/media/SYSLINUX`: `flashrom -p internal -w /media/SYSLINUX/apu2_160120.rom`
+6. Once you get to a prompt, use `flashrom` to update the BIOS. The ROM file will be in `/media/SYSLINUX`: `flashrom -p internal -w /media/SYSLINUX/apu2_160311.rom`
 7. When verification is done, reboot the APU2 so changes take effect
 
 ## Install OpenBSD
