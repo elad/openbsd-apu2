@@ -67,7 +67,7 @@ If the BIOS needs updating - the version displayed during boot is not the latest
 
 ### Bootable OpenBSD installation USB flash drive
 
-1. Download the OpenBSD installer, [amd64/install59.fs](ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/amd64/install59.fs), file-system image (not ISO!) from one of the mirrors
+1. Download the OpenBSD installer, [`amd64/install59.fs`](http://ftp.openbsd.org/pub/OpenBSD/5.9/amd64/install59.fs), file-system image (not ISO!) from one of the mirrors
 2. Insert the USB flash drive to the Mac, figure out which device it is (with `diskutil list`, let's assume it's `/dev/disk2`) and unmount it (`diskutil unmountDisk /dev/disk2`)
 3. Write the installer image to the flash drive: `sudo dd if=install59.fs of=/dev/rdisk2 bs=1m` (note the use of `rdisk2` - that's the raw device)
 4. Eject the USB flash drive
