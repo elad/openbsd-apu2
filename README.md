@@ -2,6 +2,8 @@
 
 This is a writeup on getting OpenBSD running on PC Engines APU2.
 
+Note: Some of the steps require downloading software. Whenever possible, verify checksums of such software or better yet, download it from a well-known repository. Remember [Reflections on Trusting Trust](https://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf)!
+
 ## Hardware
 
 | Component  | Source | Link  | Price  |
@@ -67,7 +69,7 @@ If the BIOS needs updating - the version displayed during boot is not the latest
 
 ### Bootable OpenBSD installation USB flash drive
 
-1. Download the OpenBSD installer, [`amd64/install59.fs`](http://ftp.openbsd.org/pub/OpenBSD/5.9/amd64/install59.fs), file-system image (not ISO!) from one of the mirrors
+1. Download the OpenBSD installer, [`amd64/install59.fs`](http://ftp.openbsd.org/pub/OpenBSD/5.9/amd64/install59.fs) ([SHA256 fingerprint](http://ftp.openbsd.org/pub/OpenBSD/5.9/amd64/SHA256)), file-system image (not ISO!) from one of the mirrors
 2. Insert the USB flash drive to the Mac, figure out which device it is (with `diskutil list`, let's assume it's `/dev/disk2`) and unmount it (`diskutil unmountDisk /dev/disk2`)
 3. Write the installer image to the flash drive: `sudo dd if=install59.fs of=/dev/rdisk2 bs=1m` (note the use of `rdisk2` - that's the raw device)
 4. Eject the USB flash drive
