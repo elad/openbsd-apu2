@@ -2,6 +2,8 @@
 
 This is a writeup on getting OpenBSD running on PC Engines APU2.
 
+Motivation: I chose OpenBSD because I have a few ideas for building a router that protects IoT-rich networks. OpenBSD's combination of proactive security and a clean networking stack made it possible to quickly implement a proof-of-concept. If anyone's interested in working on such a project, contact me. :)
+
 Note: Some of the steps require downloading software. Whenever possible, verify checksums of such software or better yet, download it from a well-known repository. Remember [Reflections on Trusting Trust](https://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf)!
 
 ## Hardware
