@@ -76,6 +76,8 @@ If the BIOS needs updating - the version displayed during boot is not the latest
 
 ### Serial console settings for OpenBSD
 
+Note: Starting with OpenBSD 6.0, this is done by the installer.
+
 The following settings are required for proper serial console output:
 
 ```
