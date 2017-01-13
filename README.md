@@ -83,7 +83,6 @@ Note: Starting with OpenBSD 6.0, this is done by the installer.
 The following settings are required for proper serial console output:
 
 ```
-stty pc0 115200
 stty com0 115200
 set tty com0
 ```
