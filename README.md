@@ -1,6 +1,9 @@
 # OpenBSD on PC Engines APU2
 
-This is a writeup on getting OpenBSD running on PC Engines APU2.
+This is a writeup on getting OpenBSD running on PC Engines APU2.  If you just want to install pfSense nanobsd image v2.3.x all that is needed is an SDHC card and dd to shove the downloaded pfSense image onto.  No need for the overly complex tinycore + other things as stated on the PCEngines website.
+Something like:
+ `sudo dd if=./pfSense-CE-2.3-RELEASE-4g-amd64-nanobsd.img of=/dev/sdX bs=10M`
+ where sdX is the full device name for the storage, not the partition.  The image file contains multiple partitions already.
 
 Motivation: I chose OpenBSD because I have a few ideas for building a router that protects IoT-rich networks. OpenBSD's combination of proactive security and a clean networking stack made it possible to quickly implement a proof-of-concept. If anyone's interested in working on such a project, contact me. :)
 
