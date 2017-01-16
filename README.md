@@ -46,8 +46,8 @@ Power the APU2 off and back on by pulling the plug and plugging it back in, resp
 
 BIOS updates require flashing the ROM. Create a bootable USB flash drive with TinyCore Linux from PC Engines. It includes `flashrom` but doesn't include any ROM images you might need. Steps:
 
-1. Download TinyCore Linux ([apu2-tinycore6.4.img.gz](http://pcengines.ch/file/apu2-tinycore6.4.img.gz)) and extract it to get **apu2-tinycore6.4.img**
-2. Download the latest ROM ([apu2_160311.zip](http://www.pcengines.ch/file/apu2_160311.zip)) and extract it to get **apu2_160311.rom**. It is required for making wireless networking work and booting from an SD card
+1. Download TinyCore Linux ([apu2-tinycore6.4.img.gz](http://pcengines.ch/file/apu2-tinycore6.4.img.gz), sha256sum: `4b834077ec5da535b07ab7e17215eb8d64b71dbcfd3f9076d51252a0f7158f3c`) and extract it to get **apu2-tinycore6.4.img**
+2. Download the latest ROM ([apu2_160311.zip](http://www.pcengines.ch/file/apu2_160311.zip), sha256sum: `e939187ebe29a45e6ef5000c1ca0564473495f41a5290797e4b639c340562f46`) and extract it to get **apu2_160311.rom**. It is required for making wireless networking work and booting from an SD card
 3. Double click **apu2-tinycore6.4.img**
  to mount the image and drag **apu2_160311.rom** to it
 4. Eject the TinyCore Linux image (usually named **SYSLINUX**)
