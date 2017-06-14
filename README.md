@@ -46,10 +46,10 @@ Power the APU2 off and back on by pulling the plug and plugging it back in, resp
 
 BIOS updates require flashing the ROM. Create a bootable USB flash drive with TinyCore Linux from PC Engines. It includes `flashrom` but doesn't include any ROM images you might need. Steps:
 
-1. Download TinyCore Linux ([apu2-tinycore6.4.img.gz](http://pcengines.ch/file/apu2-tinycore6.4.img.gz), sha256sum: `4b834077ec5da535b07ab7e17215eb8d64b71dbcfd3f9076d51252a0f7158f3c`) and extract it to get **apu2-tinycore6.4.img**
-2. Download the latest ROM ([apu2_160311.zip](http://www.pcengines.ch/file/apu2_160311.zip), sha256sum: `e939187ebe29a45e6ef5000c1ca0564473495f41a5290797e4b639c340562f46`) and extract it to get **apu2_160311.rom**. It is required for making wireless networking work and booting from an SD card
-3. Double click **apu2-tinycore6.4.img**
- to mount the image and drag **apu2_160311.rom** to it
+1. Download TinyCore Linux ([apu2-tinycore6.4.img.gz](http://pcengines.ch/file/apu2-tinycore6.4.img.gz), sha256sum: `4b834077ec5da535b07ab7e17215eb8d64b71dbcfd3f9076d51252a0f7158f3c`) and extract it to get **apu2_tinycore.img**
+2. Download the latest ROM [apu2_v4.0.7.rom.zip](http://pcengines.ch/file/apu2_v4.0.7.rom.zip) and extract it to get **apu2_v4.0.7.rom**. It is required for making wireless networking work and booting from an SD card.
+3. Double click **apu2_tinycore.img**
+ to mount the image and drag **apu2_v4.0.7.rom** to it
 4. Eject the TinyCore Linux image (usually named **SYSLINUX**)
 5. Insert the USB flash drive to the Mac, figure out which device it is (with `diskutil list`, let's assume it's `/dev/disk2`) and unmount it (`diskutil unmountDisk /dev/disk2`)
 6. Write the TinyCore Linux image to the flash drive: `sudo dd if=apu2-tinycore6.4.img of=/dev/rdisk2 bs=1m` (note the use of `rdisk2` - that's the raw device)
@@ -57,14 +57,56 @@ BIOS updates require flashing the ROM. Create a bootable USB flash drive with Ti
 
 ## Update the BIOS
 
-If the BIOS needs updating - the version displayed during boot is not the latest that's on the PC Engines website - follow these steps:
+The BIOS from PC Engines is a bit of a mess. First of all, it's not intuitive to find what version of the bios you are currently running. Second of all, it's not easy to tell which of the four versions of the bios they [publish on their website](http://pcengines.ch/howto.htm#bios) is the most recent. As best I can tell on 14 Jun 2017, **apu2_v4.0.7.rom.zip** is the most recent non-experimental bios, with **apu2_v4.5.5.rom.tar.gz** as the most recent experimental bios.
+
+When you boot with the **apu2_v4.0.7.rom** installed, you will see this:
+
+```
+PCEngines apu2
+coreboot build 20170228
+2032 MB DRAM
+
+SeaBIOS (version rel-1.10.0.1)
+
+Press F10 key now for boot menu
+```
+
+To see the bios version, you must press **F10**, and then choose '3. Payload [setup]', after which you will see:
+
+```
+Booting from CBFS...
+
+### PC Engines apu2 setup v4.0.4 ###
+Boot order - type letter to move device to top.
+
+  a USB 1 / USB 2 SS and HS
+  b SDCARD
+  c mSATA
+  d SATA
+  e iPXE (disabled)
+
+
+  r Restore boot order defaults
+  n Network/PXE boot - Currently Disabled
+  t Serial console - Currently Enabled
+  l Serial console redirection - Currently Enabled
+  u USB boot - Currently Enabled
+  o UART C - Currently Disabled
+  p UART D - Currently Disabled
+  x Exit setup without save
+  s Save configuration and exit
+```
+
+Note that the filename from PC Engines is called v4.0.7, and the bios claims it's running v4.0.4. Messed Up.
+
+If you determine you need to update the BIOS, follow these steps:
 
 1. Power off the APU2
 2. Insert the USB flash drive to one of the APU2's USB slots
 3. Connect the serial console cable
 4. Power on the APU2
 5. Press F10 to enter the APU2 boot menu. In the boot menu, opt to boot from the USB flash drive (usually option number 1)
-6. Once you get to a prompt, use `flashrom` to update the BIOS. The ROM file will be in `/media/SYSLINUX`: `flashrom -p internal -w /media/SYSLINUX/apu2_160311.rom`
+6. Once you get to a prompt, use `flashrom` to update the BIOS. The ROM file will be in `/media/SYSLINUX`: `flashrom -p internal -w /media/SYSLINUX/apu2_v4.0.7.rom`
 7. When verification is done, reboot the APU2 so changes take effect
 
 ## Install OpenBSD
