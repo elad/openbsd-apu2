@@ -71,14 +71,12 @@ If the BIOS needs updating - the version displayed during boot is not the latest
 
 ### Bootable OpenBSD installation USB flash drive
 
-1. Download the OpenBSD installer, [`amd64/install59.fs`](http://ftp.openbsd.org/pub/OpenBSD/5.9/amd64/install59.fs) ([SHA256 fingerprint](http://ftp.openbsd.org/pub/OpenBSD/5.9/amd64/SHA256)), file-system image (not ISO!) from one of the mirrors
+1. Download the OpenBSD installer, [`amd64/install61.fs`](http://ftp.openbsd.org/pub/OpenBSD/6.1/amd64/install61.fs) ([SHA256 fingerprint](http://ftp.openbsd.org/pub/OpenBSD/6.1/amd64/SHA256)), file-system image (not ISO!) from one of the mirrors
 2. Insert the USB flash drive to the Mac, figure out which device it is (with `diskutil list`, let's assume it's `/dev/disk2`) and unmount it (`diskutil unmountDisk /dev/disk2`)
-3. Write the installer image to the flash drive: `sudo dd if=install59.fs of=/dev/rdisk2 bs=1m` (note the use of `rdisk2` - that's the raw device)
+3. Write the installer image to the flash drive: `sudo dd if=install61.fs of=/dev/rdisk2 bs=1m` (note the use of `rdisk2` - that's the raw device)
 4. Eject the USB flash drive
 
 ### Serial console settings for OpenBSD
-
-Note: Starting with OpenBSD 6.0, this is done by the installer.
 
 The following settings are required for proper serial console output:
 
@@ -87,7 +85,7 @@ stty com0 115200
 set tty com0
 ```
 
-Enter them in the `boot>` prompt when booting the installer. Put them in `/etc/boot.conf` so they're always in effect.
+Enter them in the `boot>` prompt when booting the installer. The installer will write these into `/etc/boot.conf` so you don't have to enter them again.
 
 ### Install OpenBSD
 
