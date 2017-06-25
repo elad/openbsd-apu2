@@ -19,7 +19,7 @@ Note: Some of the steps require downloading software. Whenever possible, verify 
 | Pigtail cable I-PEX -> reverse SMA | PC Engines | [pigsma](http://www.pcengines.ch/pigsma.htm) | 2 x $1.5
 | Antenna reverse SMA dual band | PC Engines | [antsmadb](http://www.pcengines.ch/antsmadb.htm) | 2 x $2.05
 | Null modem cable DB9-F to DB9-F | PC Engines, anywhere | [db9cab1](http://www.pcengines.ch/db9cab1.htm) | $1.3
-| USB to RS-232 DM9-M adapter | Sabrent (FTDI) | [USB-2920](https://www.sabrent.com/category/cables/USB-2920/) | $10.11 |
+| USB to RS-232 DM9-M adapter | PC Engines, Sabrent (FTDI) | [usbcom1a](http://www.pcengines.ch/usbcom1a.htm) [USB-2920](https://www.sabrent.com/category/cables/USB-2920/) | $8-10 |
 | 8GB USB Flash Drive | Amazon, anywhere | [CZ50](http://www.amazon.com/SanDisk-Cruzer-Frustration-Free-Packaging--SDCZ50-008G-AFFP/dp/B007KFAG7U/) | $4.29
 
 Total $202.68 without shipping.
@@ -32,13 +32,15 @@ Assemble the hardware per the instructions on the PC Engines website. Remember:
 
 ## Setup serial console
 
-Note that the serial port settings for the APU2 are 115200 baud rate, 8N1 (8 data bits, no parity, 1 stop bit).
+Connect the APU serial port to another machine.  This can be done several ways:
 
-1. Install the USB to serial [driver](http://downloads.trendnet.com/tu-s9_v2/utilities/driver_tu-s9_20151110.zip)
-2. Plug the USB end of the USB to serial cable to the Mac
-3. Plug the DB9-M end of the USB to serial cable to one end of the null modem cable
-4. Plug the other end of the null modem cable to the APU2
-5. Connect to the APU2 from the terminal: `screen /dev/tty.usbserial 115200` (note: your device might be different, look for devices with `tty` and `serial` in their name)
++ If you have a serial port, you can connect it directly to the APU with a [null modem cable](http://www.pcengines.ch/db9cab1.htm).
++ You can use a [USB-to-serial](https://www.sabrent.com/category/cables/USB-2920/) adapter at your machine, with a [null modem cable](http://www.pcengines.ch/db9cab1.htm) and its [driver](http://downloads.trendnet.com/tu-s9_v2/utilities/driver_tu-s9_20151110.zip).
++ Or use the [PCEngines adapter](http://www.pcengines.ch/usbcom1a.htm) with a regular USB cable.
+
+The serial port settings for the APU2 are 115200 baud rate, 8N1 (8 data bits, no parity, 1 stop bit).
+
+Connect from a terminal: `screen /dev/tty.usbserial 115200`  Your device might be different; look in `/dev` for devices with `tty` and `serial` in their name, or check dmesg.
 
 Power the APU2 off and back on by pulling the plug and plugging it back in, respectively. You should see output on the screen.
 
