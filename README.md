@@ -32,13 +32,15 @@ Assemble the hardware per the instructions on the PC Engines website. Remember:
 
 ## Setup serial console
 
-Note that the serial port settings for the APU2 are 115200 baud rate, 8N1 (8 data bits, no parity, 1 stop bit).
+Connect the APU serial port to another machine.  This can be done several ways:
 
-1. Install the USB to serial [driver](http://downloads.trendnet.com/tu-s9_v2/utilities/driver_tu-s9_20151110.zip)
-2. Plug the USB end of the USB to serial cable to the Mac
-3. Plug the DB9-M end of the USB to serial cable to one end of the null modem cable
-4. Plug the other end of the null modem cable to the APU2
-5. Connect to the APU2 from the terminal: `screen /dev/tty.usbserial 115200` (note: your device might be different, look for devices with `tty` and `serial` in their name)
++ If you have a serial port, you can connect it directly to the APU with a [null modem cable](http://www.pcengines.ch/db9cab1.htm).
++ You can use a [USB-to-serial](https://www.sabrent.com/category/cables/USB-2920/) adapter at your machine, with a [null modem cable](http://www.pcengines.ch/db9cab1.htm) and its [driver](http://downloads.trendnet.com/tu-s9_v2/utilities/driver_tu-s9_20151110.zip).
++ Or use the [PCEngines adapter](http://www.pcengines.ch/usbcom1a.htm) with a regular USB cable.
+
+The serial port settings for the APU2 are 115200 baud rate, 8N1 (8 data bits, no parity, 1 stop bit).
+
+Connect from a terminal: `screen /dev/tty.usbserial 115200`  Your device might be different; look in `/dev` for devices with `tty` and `serial` in their name, or check dmesg.
 
 Power the APU2 off and back on by pulling the plug and plugging it back in, respectively. You should see output on the screen.
 
