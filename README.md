@@ -78,8 +78,6 @@ If the BIOS needs updating - the version displayed during boot is not the latest
 
 ### Serial console settings for OpenBSD
 
-Note: Starting with OpenBSD 6.0, this is done by the installer.
-
 The following settings are required for proper serial console output:
 
 ```
@@ -87,7 +85,8 @@ stty com0 115200
 set tty com0
 ```
 
-Enter them in the `boot>` prompt when booting the installer. Put them in `/etc/boot.conf` so they're always in effect.
+Enter them in the `boot>` prompt when booting the installer. Put them in `/etc/boot.conf` so they're always in effect (
+Note: Starting with OpenBSD 6.0, the installer will ask you to add them to boot.conf).
 
 ### Install OpenBSD
 
